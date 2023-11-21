@@ -10,12 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@types/connect": "^3.4.38",
-    "events": "^3.3.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.18",
+    "@mui/styled-engine": "^5.14.18",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.6",
     "firebase": "^10.6.0",
-    "firebase-admin": "^11.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-password-strength-bar": "^0.4.1",
+    "react-pro-sidebar": "^1.1.0-alpha.1",
+    "react-router-dom": "^6.19.0",
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

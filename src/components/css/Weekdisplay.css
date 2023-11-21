@@ -1,0 +1,11 @@
+.WeekdisplayContainer {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.WeekdisplayContainer h1 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+}/*# sourceMappingURL=Weekdisplay.css.map */

@@ -1,0 +1,19 @@
+.Topbar {
+  height: 2.5rem;
+  display: flex;
+  padding: 0px 5% 0px 5%;
+  background-color: #023145;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.Topbar .Sidebar {
+  max-width: 50vw;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  background-color: #023145;
+}/*# sourceMappingURL=Topbar.css.map */
