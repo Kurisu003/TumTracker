@@ -25,11 +25,13 @@ button{
 }
 
 .ps-menu-button{
-    .ps-menu-label{
-        a{color: white !important;}
-    }
+    color: white !important;
     font-family: "Nunito", sans-serif;
     font-weight: bold;
+
+    .ps-menu-label{
+        span{color: white !important;}
+    }
     &:hover{
         background-color: #0687BE !important;
     }

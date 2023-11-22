@@ -24,10 +24,11 @@ button {
 }
 
 .ps-menu-button {
+  color: white !important;
   font-family: "Nunito", sans-serif;
   font-weight: bold;
 }
-.ps-menu-button .ps-menu-label a {
+.ps-menu-button .ps-menu-label span {
   color: white !important;
 }
 .ps-menu-button:hover {

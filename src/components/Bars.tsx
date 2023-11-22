@@ -28,21 +28,21 @@ function Bars() {
                         },
                     }}
                 >
-                    <MenuItem>
-                        <Link to={"/analysis"}> Analysis </Link>
-                    </MenuItem>
-                    <MenuItem>
-                        <Link to={"/linalg"}> Lin. Alg. </Link>
-                    </MenuItem>
-                    <MenuItem>
-                        <Link to={"/schaltung"}> Schaltung. </Link>
-                    </MenuItem>
-                    <MenuItem>
-                        <Link to={"/digtech"}> Digit. tech. </Link>
-                    </MenuItem>
-                    <MenuItem>
-                        <Link to={"/comptech"}> Comp. tech. </Link>
-                    </MenuItem>
+                    <Link to={"/analysis"}>
+                        <MenuItem>Analysis</MenuItem>
+                    </Link>
+                    <Link to={"/linalg"}>
+                        <MenuItem>Lin. Alg.</MenuItem>
+                    </Link>
+                    <Link to={"/schaltung"}>
+                        <MenuItem>Schaltung.</MenuItem>
+                    </Link>
+                    <Link to={"/digtech"}>
+                        <MenuItem>Digit. tech.</MenuItem>
+                    </Link>
+                    <Link to={"/comptech"}>
+                        <MenuItem>Comp. tech.</MenuItem>
+                    </Link>
                 </Menu>
             </Sidebar>
         </>

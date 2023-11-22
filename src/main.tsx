@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             </Routes>
 
             {subjects.map((el) => (
-                <Routes>
+                <Routes key={"nav" + el}>
                     <Route
                         path={"/" + el}
                         element={<Weekdisplay subject={el} />}
