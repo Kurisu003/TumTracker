@@ -1,24 +1,24 @@
 import { TextField } from "@mui/material";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
     const navigate = useNavigate();
     const auth = getAuth();
-    const [user] = useAuthState(auth);
+    // const [user] = useAuthState(auth);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     function loginUser() {
         signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then((_) => {
                 navigate("/");
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                console.error(errorCode + " " + errorMessage);
                 // updateFailed(errorMessage.replace("Firebase: ", ""));
             });
     }

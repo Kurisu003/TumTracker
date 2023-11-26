@@ -33,6 +33,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                     </Routes>
                 );
             })}
+
+            {/* <Routes>
+                <Route path="*" element={<h1>Page not found</h1>} />
+            </Routes> */}
         </BrowserRouter>
     </React.StrictMode>
 );

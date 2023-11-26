@@ -5,7 +5,6 @@ import {
     updateProfile,
 } from "firebase/auth";
 import { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import PasswordStrengthBar from "react-password-strength-bar";
 import { useNavigate } from "react-router-dom";
 import { addUserToDb, usernameFree } from "./TsFiles/databaseinteraction";
@@ -19,10 +18,9 @@ function Signup() {
     const [password2, setPassword2] = useState("");
 
     const auth = getAuth();
-    const [user] = useAuthState(auth);
+    // const [user] = useAuthState(auth);
 
     async function signUpUser() {
-        const auth = getAuth();
         if (email === "" || userName === "" || password === "") {
             console.error("Please fill in all fields");
             return;

@@ -27,13 +27,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-// const storage = getStorage(app);
-export async function test(username: string) {
-    // console.log("getting user by username")
-    const userCol = collection(db, "user-reports");
-    const userSnapshot = await getDocs(userCol);
-    console.log(userSnapshot.docs.map((doc) => doc.data()));
-}
 
 export async function usernameFree(username: string): Promise<boolean> {
     const userCol = collection(db, "user-reports");
@@ -49,7 +42,9 @@ export async function addUserToDb(username: string) {
 
     await addDoc(collection(db, "users"), {
         Username: username,
+        UserData: [],
     });
+
 }
 
 export async function getWorksheets(
