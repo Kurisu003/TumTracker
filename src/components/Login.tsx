@@ -27,6 +27,7 @@ function Login() {
         <div id="LoginContainer">
             <div className="InputWrapper">
                 <TextField
+                    style={{}}
                     className="TextField"
                     id="outlined-textarea-email"
                     placeholder="john.doe@gmail.com"
