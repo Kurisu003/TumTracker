@@ -14,7 +14,7 @@ function Topbar(props: { setSidebarOpen: Function; sidebarOpen: boolean }) {
                 }}
             />
 
-            {auth.currentUser?.displayName == "" ? (
+            {auth.currentUser?.displayName == "" || auth.currentUser == null ? (
                 <Link to={"/login"}>
                     <p>Anmelden</p>
                 </Link>

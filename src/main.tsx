@@ -7,13 +7,7 @@ import Signup from "./components/Signup.tsx";
 import { subjectShorts } from "./components/TsFiles/types.ts";
 import Weekdisplay from "./components/Weekdisplay.tsx";
 
-const subjects: subjectShorts[] = [
-    "analysis",
-    "linalg",
-    "schaltung",
-    "comptech",
-    "digtech",
-];
+const subjects: subjectShorts[] = ["An", "La", "St", "Ct", "Dt"];
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -28,14 +22,17 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Route path="/signup" element={<Signup />} />
             </Routes>
 
-            {subjects.map((el) => (
-                <Routes key={"nav" + el}>
-                    <Route
-                        path={"/" + el}
-                        element={<Weekdisplay subject={el} />}
-                    />
-                </Routes>
-            ))}
+            {subjects.map((el) => {
+                console.log(el);
+                return (
+                    <Routes key={"nav" + el}>
+                        <Route
+                            path={"/" + el}
+                            element={<Weekdisplay subject={el} />}
+                        />
+                    </Routes>
+                );
+            })}
         </BrowserRouter>
     </React.StrictMode>
 );

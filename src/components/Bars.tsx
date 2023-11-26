@@ -28,13 +28,13 @@ function Bars() {
                         },
                     }}
                 >
-                    <Link to={"/analysis"}>
+                    <Link to={"/an"}>
                         <MenuItem>Analysis</MenuItem>
                     </Link>
-                    <Link to={"/linalg"}>
+                    <Link to={"/la"}>
                         <MenuItem>Lin. Alg.</MenuItem>
                     </Link>
-                    <Link to={"/schaltung"}>
+                    {/* <Link to={"/schaltung"}>
                         <MenuItem>Schaltung.</MenuItem>
                     </Link>
                     <Link to={"/digtech"}>
@@ -42,7 +42,7 @@ function Bars() {
                     </Link>
                     <Link to={"/comptech"}>
                         <MenuItem>Comp. tech.</MenuItem>
-                    </Link>
+                    </Link> */}
                 </Menu>
             </Sidebar>
         </>

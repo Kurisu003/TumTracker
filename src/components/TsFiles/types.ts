@@ -1,33 +1,40 @@
-export type userReport = {
-    Username: string;
-    Subject:{
-        Analysis:{
-            Zu: [Subject],
-            Gu: [Subject]
-        }
-        LinAlg:{
-            Zu: [Subject],
-            Gu: [Subject]
-        }
-        Schaltung:{
-            Zu: [Subject],
-            Gu: [Subject]
-        }
-        CompSci:{
-            Zu: [Subject],
-            Gu: [Subject]
-        }
-        Digital:{
-            Zu: [Subject],
-            Gu: [Subject]
-        }
-    }
-}
+export type UserData =
+    {
+        Id: string;
+        Status: Status;
+    }[]
+;
 
-export type Subject = {
-    Week: string,
-    AbNr: number,
-    Rating: "great" | "good" | "ok" | "bad" | "horrible" | "not_done" | "not_availible"
-}
+export type Status = "great"
+            | "good"
+            | "ok"
+            | "bad"
+            | "horrible"
+            | "not_done"
+            | "not_availible"
 
-export type subjectShorts = "analysis" | "linalg" | "schaltung" | "comptech" | "digtech"
+export type SubjectData = {
+    "GU":
+        {
+            Id: string;
+            Week: string;
+        }[]
+    ;
+    "ZU":
+        {
+            Id: string;
+            Week: string;
+        }[]
+    ;
+};
+
+export type subjectShorts =
+    | "An"
+    | "La"
+    | "St"
+    | "Ct"
+    | "Dt";
+
+export type subjectToTitle = {
+    [k in subjectShorts]:string
+};
