@@ -1,0 +1,5 @@
+credentials.json
+.idea
+*.pdf
+__pycache__
+tum-tracker-firebase-admin-key.json
