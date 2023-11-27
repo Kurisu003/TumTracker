@@ -30,9 +30,9 @@ function Weekdisplay(props: { subject: subjectShorts }) {
         async function init() {
             const a = await getWorksheets(props.subject);
             setConstSubjectJson(a);
-
+            // console.log(a.Gu);
+            // Todo GU should be capital
             const b = await getUserData(auth.currentUser?.displayName || "");
-            console.log(b);
             setUserData(b);
         }
         init();
@@ -43,7 +43,7 @@ function Weekdisplay(props: { subject: subjectShorts }) {
             <Bars />
             <div className="WeekdisplayContainer">
                 <h1>{propsToTitle[props.subject]}</h1>
-                {subjectJson && userData ? (
+                {subjectJson?.GU && userData ? (
                     <Weektable subjectData={subjectJson} userData={userData} />
                 ) : (
                     <div>

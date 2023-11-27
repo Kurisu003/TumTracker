@@ -54,12 +54,12 @@ export async function getWorksheets(
         collection(db, "worksheets"),
         where("__name__", "==", subject)
     );
-
     const subjectSnapshot = await getDocs(subjectQuery);
 
     const ret = subjectSnapshot.docs.map((doc) => {
         return doc.data();
     });
+
     return ret[0] as SubjectData;
 }
 

@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 return (
                     <Routes key={"nav" + el}>
                         <Route
-                            path={"/" + el}
+                            path={"/" + el.toLowerCase()}
                             element={<Weekdisplay subject={el} />}
                         />
                     </Routes>
