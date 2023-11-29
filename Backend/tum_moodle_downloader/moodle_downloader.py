@@ -45,12 +45,6 @@ def match_sheets_and_weeks(info, course_name):
                 {"Id":course_short+"Gu"+str(i),
                 "Week": info[2][i]}
             )
-        else:
-            matched_sheets["GU"].append(
-                {"Id":course_short+"Gu"+str(i)+"_N/A",
-                "Week": info[2][i]}
-            )
-
 
 
 
@@ -58,12 +52,6 @@ def match_sheets_and_weeks(info, course_name):
         if (len(temp_zu) > 0):
             matched_sheets["ZU"].append(
                 {"Id":course_short+"Zu"+str(i),
-                "Week":info[2][i-1]}
-            )
-
-        else:
-            matched_sheets["ZU"].append(
-                {"Id":course_short+"Zu"+str(i)+"_N/A",
                 "Week":info[2][i-1]}
             )
 

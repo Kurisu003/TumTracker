@@ -24,17 +24,18 @@ function Weekdisplay(props: { subject: subjectShorts }) {
         null
     );
     const [userData, setUserData] = useState<UserData | null | any>(null);
-
+    const [forceUpdate, setForceUpdate] = useState<boolean>(false);
     // Todo: Blur bg on sidebar open
     useEffect(() => {
         async function init() {
+            setForceUpdate(false);
             const a = await getWorksheets(props.subject);
             setConstSubjectJson(a);
             const b = await getUserData(auth.currentUser?.displayName || "");
             setUserData(b);
         }
         init();
-    }, []);
+    }, [forceUpdate]);
 
     return (
         <>
@@ -42,7 +43,7 @@ function Weekdisplay(props: { subject: subjectShorts }) {
             <div className="WeekdisplayContainer">
                 <h1>{propsToTitle[props.subject]}</h1>
                 {subjectJson?.GU && userData ? (
-                    <Weektable subjectData={subjectJson} userData={userData} />
+                    <Weektable forceUpdate={setForceUpdate} subjectData={subjectJson} userData={userData} />
                 ) : (
                     <div>
                         <p>Loading ...</p>

@@ -117,6 +117,9 @@ export async function updateOrCreateUserData(
         if (existingUserDataIndex !== -1) {
             // Id exists, update the existing UserData
             userData[existingUserDataIndex].Status = updateStatus as Status;
+            if(notes != ""){
+                userData[existingUserDataIndex].Notes = notes;
+            }
         } else {
             // Id doesn't exist, create a new UserData entry
             userData.push({

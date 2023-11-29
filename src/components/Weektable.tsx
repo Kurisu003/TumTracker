@@ -1,11 +1,15 @@
-import { TextField } from "@mui/material";
 import { getAuth } from "firebase/auth";
 import { useState } from "react";
 import { updateOrCreateUserData } from "./TsFiles/databaseinteraction";
 import { Status, SubjectData, UserData } from "./TsFiles/types";
 
-function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
+function Weektable(props: {
+    forceUpdate: Function;
+    subjectData: SubjectData;
+    userData: UserData;
+}) {
     const auth = getAuth();
+    const [currentNotes, setCurrentNotes] = useState<string>("");
 
     function formatDate(date: Date) {
         const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
@@ -16,8 +20,6 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
 
         return `${day}/${month}`;
     }
-
-    //TODO once blabla_NA is set by server it doesnt get changed once its availible
 
     let weeks = [
         ...new Set(
@@ -48,10 +50,10 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
             auth.currentUser?.displayName || "",
             showUpdateStatus,
             status,
-            currentNotes || ""
+            currentNotes
         );
         setShowUpdateStatus("");
-        window.location.reload();
+        props.forceUpdate(true);
     }
 
     const statusEmojiLookup: Record<Status, string> = {
@@ -63,8 +65,6 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
         not_done: "",
         not_availible: "",
     };
-
-    const [currentNotes, setCurrentNotes] = useState<string | null>("");
 
     return (
         <>
@@ -95,7 +95,7 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
                             }
                         )}
                     </div>
-                    <TextField
+                    {/* <TextField
                         style={{}}
                         className="TextField"
                         id="outlined-textarea-email"
@@ -106,7 +106,7 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
                         maxRows={1}
                         value={currentNotes}
                         onChange={(e: any) => setCurrentNotes(e.target.value)}
-                    />
+                    /> */}
                 </div>
             ) : null}
             <table className="WeekDisplayTable">
@@ -178,6 +178,7 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
                                         >
                                             <div className="WorksheetColWrapper">
                                                 {currentItem?.Id}
+                                                {/* <p>{userHasEntry?.Notes}</p> */}
                                                 <button
                                                     onClick={() => {
                                                         handleStatusChange(
