@@ -1,3 +1,4 @@
+import { TextField } from "@mui/material";
 import { getAuth } from "firebase/auth";
 import { useState } from "react";
 import { updateOrCreateUserData } from "./TsFiles/databaseinteraction";
@@ -15,6 +16,8 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
 
         return `${day}/${month}`;
     }
+
+    //TODO once blabla_NA is set by server it doesnt get changed once its availible
 
     let weeks = [
         ...new Set(
@@ -44,7 +47,8 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
         await updateOrCreateUserData(
             auth.currentUser?.displayName || "",
             showUpdateStatus,
-            status
+            status,
+            currentNotes || ""
         );
         setShowUpdateStatus("");
         window.location.reload();
@@ -59,6 +63,8 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
         not_done: "",
         not_availible: "",
     };
+
+    const [currentNotes, setCurrentNotes] = useState<string | null>("");
 
     return (
         <>
@@ -89,6 +95,18 @@ function Weektable(props: { subjectData: SubjectData; userData: UserData }) {
                             }
                         )}
                     </div>
+                    <TextField
+                        style={{}}
+                        className="TextField"
+                        id="outlined-textarea-email"
+                        placeholder="Notes"
+                        label="Notes"
+                        margin="none"
+                        minRows={1}
+                        maxRows={1}
+                        value={currentNotes}
+                        onChange={(e: any) => setCurrentNotes(e.target.value)}
+                    />
                 </div>
             ) : null}
             <table className="WeekDisplayTable">

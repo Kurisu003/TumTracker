@@ -2,6 +2,7 @@ export type UserData =
     {
         Id: string;
         Status: Status;
+        Notes?: string;
     }[]
 ;
 

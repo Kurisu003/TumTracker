@@ -82,7 +82,8 @@ export async function getUserData(username: string): Promise<UserData | null> {
 export async function updateOrCreateUserData(
     username: string,
     idToUpdate: string,
-    updateStatus: string
+    updateStatus: string,
+    notes : string,
 ): Promise<void | null> {
     if (username === "") return;
 
@@ -121,6 +122,7 @@ export async function updateOrCreateUserData(
             userData.push({
                 Id: idToUpdate,
                 Status: updateStatus as Status,
+                Notes: notes,
             });
         }
 

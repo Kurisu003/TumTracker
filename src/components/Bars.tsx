@@ -37,10 +37,10 @@ function Bars() {
                     <Link to={"/st"}>
                         <MenuItem>Schaltung.</MenuItem>
                     </Link>
-                    {/* <Link to={"/digtech"}>
+                    <Link to={"/dt"}>
                         <MenuItem>Digit. tech.</MenuItem>
                     </Link>
-                    <Link to={"/comptech"}>
+                    {/* <Link to={"/comptech"}>
                         <MenuItem>Comp. tech.</MenuItem>
                     </Link> */}
                 </Menu>
