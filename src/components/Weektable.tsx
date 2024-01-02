@@ -9,7 +9,7 @@ function Weektable(props: {
     userData: UserData;
 }) {
     const auth = getAuth();
-    const [currentNotes, setCurrentNotes] = useState<string>("");
+    // const [currentNotes, setCurrentNotes] = useState<string>("");
 
     function formatDate(date: Date) {
         const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
@@ -50,7 +50,8 @@ function Weektable(props: {
             auth.currentUser?.displayName ?? "",
             showUpdateStatus,
             status,
-            currentNotes
+            // currentNotes
+            ""
         );
         setShowUpdateStatus("");
         props.forceUpdate(true);
