@@ -47,7 +47,7 @@ function Weektable(props: {
 
     async function updateStatusDb(status: Status) {
         await updateOrCreateUserData(
-            auth.currentUser?.displayName || "",
+            auth.currentUser?.displayName ?? "",
             showUpdateStatus,
             status,
             currentNotes
@@ -135,20 +135,21 @@ function Weektable(props: {
                                 </td>
 
                                 {["GU", "ZU"].map((group) => {
-                                    // gets last 2 digits of current year
-                                    const currentYear = new Date()
-                                        .getFullYear()
-                                        .toString()
-                                        .substring(2);
                                     // formats the string so that it matches
                                     // the format in the database
-                                    const weekLookup =
-                                        formattedStartDate + "/" + currentYear;
+                                    const weekLookup23 =
+                                        formattedStartDate + "/" + 23;
+                                    const weekLookup24 =
+                                        formattedStartDate + "/" + 24;
 
                                     // checks if user has an entry for Gu/Zu
                                     const currentItem = props.subjectData[
                                         group as keyof SubjectData
-                                    ].find((item) => item.Week === weekLookup);
+                                    ].find(
+                                        (item) =>
+                                            item.Week === weekLookup23 ||
+                                            item.Week === weekLookup24
+                                    );
 
                                     if (
                                         currentItem?.Id.includes("N/A") ||
